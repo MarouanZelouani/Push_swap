@@ -7,6 +7,9 @@ CFILES =	error_checks.c\
 			reverse_r_operation.c\
 			rotate_operation.c\
 			sort_for_three.c\
+			push_cases.c\
+			sort.c\
+			stack_utils_2.c\
 
 OFILES = $(CFILES:.c=.o)
 CFLAGS = -Wall -Wextra -Werror

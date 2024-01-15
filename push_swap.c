@@ -27,11 +27,28 @@ int main (int ac, char **av)
         ft_putstr_fd("SORTED\n", 2);
         return (0);
     }
-    //printing the stack a
-    // printf("not sorted\n");
-    // print_stack(stack_a);
+
+    // printing the stack a
+    printf("not sorted\n");
+    print_stack(stack_a);
+
+    printf("======================\n");
+
+    // sorting stack 
+    sort_stack(&stack_a, &stack_b);
+
     // testing the stort operations
-    // printf("======================\n");
+    printf("======================\n");
+    printf("sorted\n");
+    print_stack(stack_a);
+
+    printf("======================\n");
+    if(is_sorted(stack_a))
+    {
+        ft_putstr_fd("SORTED\n", 1);
+        return (0);
+    }
+
     // if (ft_stack_size(stack_a) == 3)
     //     sort_three(&stack_a);
     // else 
@@ -44,7 +61,5 @@ int main (int ac, char **av)
     // printf("stack b\n");
     // print_stack(stack_b);
     // printf("======================\n");
-    // printf("sorted\n");
-    // print_stack(stack_a);
     return (0);
 }

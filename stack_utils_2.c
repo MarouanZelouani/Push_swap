@@ -14,6 +14,25 @@ stack * get_min_in_stack(stack *s)
     }
     return min;
 }
+// void set_target(stack *a, stack *b)
+// {
+//     stack *current;
+//     int target;
+
+//     while (b != NULL)
+//     {
+//         current = a;
+//         target = get_min_in_stack(a)->data;
+//         while (current != NULL)
+//         {
+//             if (current->data > b->data && current->data < target)
+//                 target = current->data;
+//             current = current->next;
+//         }
+//         b->target = target;
+//         b = b->next;
+//     }
+// }
 
 void set_target(stack *a, stack *b)
 {
@@ -31,12 +50,13 @@ void set_target(stack *a, stack *b)
             current = current->next;
         }
         if (target_index == LONG_MAX)
-            b->target = get_min_in_stack(a);
+            b->target = get_min_in_stack(a)->data;
         else
             b->target = target_index;
         b = b->next;
     }
 }
+
 stack *get_node(stack *s, int data)
 {
     stack *node;
@@ -76,7 +96,6 @@ int calculate_price(stack *a, stack *b)
 void set_node_to_push(stack *a, stack *b)
 {
     stack *chosen_node;
-    int min_price;
 
     chosen_node = NULL;
     while (b != NULL)

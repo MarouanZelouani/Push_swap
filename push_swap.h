@@ -26,11 +26,28 @@ void print_stack(stack *s);
 int ft_stack_size(stack *s);
 stack * get_min_in_stack(stack *s);
 
+// SET UP THE STACK NODES
+void set_index_to_node(stack *s);
+void set_node_to_push(stack *a, stack *b);
+int calculate_price(stack *a, stack *b);
+stack *get_node(stack *s, int data);
+void set_target(stack *a, stack *b);
+stack * get_min_in_stack(stack *s);
+void set_up_nodes(stack *a, stack *b);
+
+// PUSH CASES
+void case_1 (stack *to_push, stack *target, stack **a, stack **b);
+void case_2 (stack *to_push, stack *target, stack **a, stack **b);
+void case_3 (stack *to_push, stack *target, stack **a, stack **b);
+void case_4 (stack *to_push, stack *target, stack **a, stack **b);
+
 // SORTING PART
 void sort_three(stack **a);
 void sort_stack(stack **a, stack **b);
-void sort_five(stack **a, stack **b);
+// void sort_five(stack **a, stack **b);
 void sort_stack(stack **a, stack **b);
+void move_chosen_node(stack **a, stack **b);
+
 
 // SORTING OPERATIONS
 // SWAP
