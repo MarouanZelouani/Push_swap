@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 // PUSH OPERATION
 void push(stack **s, stack *top)

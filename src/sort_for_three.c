@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int is_the_greater(stack *s, stack *to_test)
 {

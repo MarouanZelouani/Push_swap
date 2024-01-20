@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 // swap operation
 void swap(stack **s)
 {

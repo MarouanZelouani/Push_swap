@@ -6,7 +6,7 @@
 #    By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 15:01:17 by mzelouan          #+#    #+#              #
-#    Updated: 2024/01/13 14:03:58 by mzelouan         ###   ########.fr        #
+#    Updated: 2024/01/18 09:50:11 by mzelouan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,15 +71,15 @@ $(NAME) : $(OFILES)
 bonus : $(OBFILES) $(OFILES)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-	$(AR) $(NAME) $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(AR) $(NAME) $@
 
 re: fclean all
 
 clean : 
-	$(RM) $(OFILES) $(OBFILES)
+	@$(RM) $(OFILES) $(OBFILES)
 	 
 fclean : clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 .PHONY : clean fclean re all

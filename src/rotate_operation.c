@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 // ROTATING A STACK  (the first element becames the last and others shift up to the top by one place)
 void  rotate (stack **s)

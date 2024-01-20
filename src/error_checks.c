@@ -1,11 +1,11 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int is_all_digits(char **av)
 {
     int i;
     int j;
 
-    i = 1;
+    i = 0;
     while (av[i])
     {
         j = 0;
@@ -26,7 +26,7 @@ int exist_duplicates (char **av)
     int i;
     int j;
 
-    i = 1;
+    i = 0;
     while (av[i])
     {
         j = i + 1;
@@ -58,9 +58,3 @@ int is_sorted(stack *s)
     }
     return (1); 
 }
-
-// int is_all_integers(char **av)
-// {
-//     int i;
-//     i = 0;
-// }

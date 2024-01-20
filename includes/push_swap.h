@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <limits.h>
 
-#include "./libft/libft.h"
+#include "../libft/libft.h"
 
 typedef struct t_stack
 {
@@ -29,7 +29,7 @@ stack * get_min_in_stack(stack *s);
 // SET UP THE STACK NODES
 void set_index_to_node(stack *s);
 void set_node_to_push(stack *a, stack *b);
-int calculate_price(stack *a, stack *b);
+int calculate_price(stack *a, stack *b, stack *chosen_node, stack *target_node);
 stack *get_node(stack *s, int data);
 void set_target(stack *a, stack *b);
 stack * get_min_in_stack(stack *s);
@@ -70,5 +70,9 @@ void reverse_rotate(stack **s);
 void reverse_rotate_a(stack **a);
 void reverse_rotate_b(stack **b);
 void reverse_rotate_ab(stack **a, stack **b);
+
+// CHECKER 
+void execute_operation(stack **a, stack **b, char *operation);
+void execute_instructions(stack **a, stack **b);
 
 #endif

@@ -1,9 +1,9 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 // ALL INSTRUCTIONs CASES
 
 // to_push->index > MID_B && target->index > MID_A
-void case_1 (stack *to_push, stack *target, stack **a, stack **b)
+void case_4 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0 && target->index != 0)
     {
@@ -30,7 +30,7 @@ void case_1 (stack *to_push, stack *target, stack **a, stack **b)
 }
 
 // to_push->index > MID_B && target->index < MID_A
-void case_2 (stack *to_push, stack *target, stack **a, stack **b)
+void case_3 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0)
     {
@@ -45,7 +45,7 @@ void case_2 (stack *to_push, stack *target, stack **a, stack **b)
 }
 
 // to_push->index < MID_B && target->index > MID_A
-void case_3 (stack *to_push, stack *target, stack **a, stack **b)
+void case_2 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0)
     {
@@ -60,7 +60,7 @@ void case_3 (stack *to_push, stack *target, stack **a, stack **b)
 }
 
 // to_push->index < MID_B && target->index < MID_A
-void case_4 (stack *to_push, stack *target, stack **a, stack **b)
+void case_1 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0 && target->index != 0)
     {

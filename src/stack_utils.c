@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 stack *ft_new_stack_node(int data, int index)
 {
@@ -48,7 +48,7 @@ void init_stack(stack **stack_a, char ** av)
     stack *holder;
     int index;
 
-    i = 1;
+    i = 0;
     index = 0;
     holder = NULL;
     while (av[i])
@@ -56,7 +56,7 @@ void init_stack(stack **stack_a, char ** av)
         cheker = ft_atoi(av[i]);
         if (!(cheker >= INT_MIN && cheker <= INT_MAX))
         {
-            ft_putstr_fd("ERROR\n", 2);
+            ft_putstr_fd("Error\n", 2);
             return ;
         }
         holder = ft_new_stack_node(cheker, index);
@@ -73,7 +73,7 @@ void print_stack(stack *s)
     current = s;
     while (current != NULL)
     {
-        printf("%d\n", current->data);
+        printf("DATA=%d INDEX=%d TO_PUSH=%d TARGET=%d\n", current->data, current->index, current->to_push, current->target);
         current = current->next;
     }
 }

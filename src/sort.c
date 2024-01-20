@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 
 // MARKE THE CHOSEN NODE (TOBE PUSHED FROM B TO A) 
@@ -17,7 +17,7 @@ stack *get_to_push_node(stack *s)
     to_push = NULL;
     while(s != NULL)
     {
-        if(s->to_push)
+        if(s->to_push == 1)
         {
             to_push = s;
             break;
@@ -37,18 +37,40 @@ void move_chosen_node(stack **a, stack **b)
     stack *target;
 
     to_push = get_to_push_node(*b);
+    //printf("DATA=%d INDEX=%d\n", to_push->data, to_push->index);
     target = get_node(*a, to_push->target);
+    //printf("TARGET DATA=%d INDEX=%d\n", target->data, target->index);
     stack_a_size = ft_stack_size(*a);
     stack_b_size = ft_stack_size(*b);
     if (to_push->index > stack_b_size / 2 && target->index > stack_a_size / 2)
-        case_1(to_push, target, a, b);
-    else if (to_push->index > stack_b_size / 2 && target->index < stack_a_size / 2)
+        case_1(to_push, target, a, b); 
+    else if (to_push->index > stack_b_size / 2 && target->index <= stack_a_size / 2)
         case_2(to_push, target, a, b);
-    else if (to_push->index < stack_b_size / 2 && target->index > stack_a_size / 2)
+    else if (to_push->index <= stack_b_size / 2 && target->index > stack_a_size / 2)
         case_3(to_push, target, a, b);
     else 
         case_4(to_push, target, a, b);
     push_a(a, b);
+}
+
+void send_min_node_to_top(stack **a)
+{
+    if (get_min_in_stack(*a)->index > ft_stack_size(*a) / 2)
+        {
+            while (get_min_in_stack(*a)->index != 0)
+            {
+                reverse_rotate_a(a);
+                set_index_to_node(*a);
+            }
+        }
+        else 
+        {
+            while (get_min_in_stack(*a)->index != 0)
+            {
+                rotate_a(a);
+                set_index_to_node(*a);
+            }
+        }
 }
 
 void sort_stack(stack **a, stack **b)
@@ -57,8 +79,8 @@ void sort_stack(stack **a, stack **b)
         swap_a(a);
     else if (ft_stack_size(*a) == 3)
         sort_three(a);
-    else if (ft_stack_size(*a) <= 5)
-        printf("sort stack");
+    // else if (ft_stack_size(*a) <= 5)
+    //     printf("mm");
     else 
     {
         while (ft_stack_size(*a) > 3)
@@ -70,16 +92,8 @@ void sort_stack(stack **a, stack **b)
             move_chosen_node(a, b);
         }
         set_index_to_node(*a);
-        if (get_min_in_stack(*a)->index > ft_stack_size(*a) / 2)
-        {
-            while (get_min_in_stack(*a)->index != 0)
-                rotate_a(a);
-        }
-        else 
-        {
-            while (get_min_in_stack(*a)->index != 0)
-                reverse_rotate_a(a);
-        }
+        // SENDING THE MIN NODE TO THE TOP OF THE STACK_A 
+        send_min_node_to_top(a);
     }       
 }
 

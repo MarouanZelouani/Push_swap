@@ -6,7 +6,7 @@
 /*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:03:59 by mzelouan          #+#    #+#             */
-/*   Updated: 2024/01/13 14:10:41 by mzelouan         ###   ########.fr       */
+/*   Updated: 2024/01/20 01:11:56 by mzelouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int					ft_isdigit(int arg);
 int					ft_isalpha(int c);
 long					ft_atoi(const char *str);
 void				*ft_calloc(size_t b, size_t size);
-char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin(char *s1, char *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_strnstr(const char *big, const char *little, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);

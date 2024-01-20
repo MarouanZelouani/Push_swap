@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 stack * get_min_in_stack(stack *s)
 {
@@ -14,25 +14,6 @@ stack * get_min_in_stack(stack *s)
     }
     return min;
 }
-// void set_target(stack *a, stack *b)
-// {
-//     stack *current;
-//     int target;
-
-//     while (b != NULL)
-//     {
-//         current = a;
-//         target = get_min_in_stack(a)->data;
-//         while (current != NULL)
-//         {
-//             if (current->data > b->data && current->data < target)
-//                 target = current->data;
-//             current = current->next;
-//         }
-//         b->target = target;
-//         b = b->next;
-//     }
-// }
 
 void set_target(stack *a, stack *b)
 {
@@ -73,7 +54,7 @@ stack *get_node(stack *s, int data)
     }
     return node;
 }
-int calculate_price(stack *a, stack *b)
+int calculate_price(stack *a, stack *b, stack *chosen_node, stack *target_node)
 {
     int stack_a_size;
     int stack_b_size;    
@@ -82,21 +63,23 @@ int calculate_price(stack *a, stack *b)
     stack_a_size = ft_stack_size(a);
     stack_b_size = ft_stack_size(b);
     total_price = 0;
-    if (a->index < stack_a_size / 2)
-        total_price += a->index;
+    if (chosen_node->index <= stack_b_size / 2)
+        total_price += chosen_node->index;
     else 
-        total_price += stack_a_size - a->index;
-    if (b->index < stack_b_size / 2)
-        total_price += b->index;
+        total_price += stack_b_size - chosen_node->index;
+    if (target_node->index <= stack_a_size / 2)
+        total_price += target_node->index;
     else 
-        total_price += stack_b_size - b->index;
+        total_price += stack_a_size - target_node->index;
     return total_price;
 }
 
 void set_node_to_push(stack *a, stack *b)
 {
     stack *chosen_node;
+    stack *head;
 
+    head = b;
     chosen_node = NULL;
     while (b != NULL)
     {
@@ -105,8 +88,12 @@ void set_node_to_push(stack *a, stack *b)
         //     chosen_node = b;
 
         // FIXED
-        if (chosen_node == NULL || calculate_price(b, get_node(a, b->target)) < calculate_price(chosen_node, get_node(a, chosen_node->target)))
+        if (chosen_node == NULL || 
+        calculate_price(a, head, b, get_node(a, b->target)) < calculate_price(a, head, chosen_node, get_node(a, chosen_node->target)))
             chosen_node = b;
+        // if (chosen_node == NULL || 
+        // calculate_price(b, get_node(a, b->target)) < calculate_price(chosen_node, get_node(a, chosen_node->target)))
+        //     chosen_node = b;
         b = b->next;
     }
     if (chosen_node != NULL)
