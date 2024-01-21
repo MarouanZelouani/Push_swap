@@ -11,7 +11,7 @@ SRC = ./src
 
 CFILES = ./lib/get_next_line/get_next_line.c  ./lib/get_next_line/get_next_line_utils.c	checker/execute.c src/error_checks.c src/free_stack.c src/push_cases.c src/push_operation.c  src/reverse_r_operation.c src/rotate_operation.c src/sort.c src/sort_for_five.c src/sort_for_three.c src/stack_utils_2.c src/stack_utils.c src/swap_operation.c
 
-CHECKER_C =		checker/check.c
+CHECKER_C =		checker/check_pro.c
 
 PUSH_SWAP_C =	src/push_swap.c
 
@@ -24,7 +24,7 @@ CC = cc
 RM = rm -f
 AR = ar rc
 
-all: $(NAME)
+all: $(NAME) $(CHECKER)
 
 makelibft :
 		@make -C $(LIBFTFOLDER)
@@ -32,10 +32,11 @@ makelibft :
 
 $(NAME) : makelibft $(OFILES) $(PUSH_SWAP_O)
 		@$(CC) $(CFLAGS) $(OFILES) $(PUSH_SWAP_O) $(LIBFT) -o $(NAME)
+		
 
 $(CHECKER) : makelibft $(OFILES) $(CHECKER_O)
-		@$(CC) $(CFLAGS) $(OFILES) $(CHECKER_O)  $(LIBFT) -o $(CHECKER)
-
+		@$(CC) $(CFLAGS) $(OFILES) $(CHECKER_O) $(LIBFT) -o $(CHECKER)
+		
 
 bonus : $(CHECKER)
 
@@ -45,11 +46,12 @@ bonus : $(CHECKER)
 re: fclean all
 
 clean : 
-	@$(RM) $(OFILES)
+	@$(RM) $(OFILES) $(PUSH_SWAP_O) $(CHECKER_O)
 	@cd $(LIBFTFOLDER) && make clean
+
 	 
 fclean : clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(CHECKER) $(LIBFT)
 	@cd $(LIBFTFOLDER) && make fclean
 
 .PHONY : clean fclean re all

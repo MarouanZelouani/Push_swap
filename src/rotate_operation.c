@@ -19,21 +19,24 @@ void  rotate (stack **s)
     *s = secound;
 }
 
-void rotate_a(stack **a)
+void rotate_a(stack **a, int true)
 {
     rotate(a);
-    ft_putstr_fd("ra\n", 1);
+    if (true)
+        ft_putstr_fd("ra\n", 1);
 }
 
-void rotate_b(stack **b)
+void rotate_b(stack **b, int true)
 {
     rotate(b);
-    ft_putstr_fd("rb\n", 1);
+    if (true)
+        ft_putstr_fd("rb\n", 1);
 }
 
-void rotate_ab(stack **a, stack **b)
+void rotate_ab(stack **a, stack **b, int true)
 {
     rotate(a);
     rotate(b);
-    ft_putstr_fd("rr\n", 1);
+    if(true)
+        ft_putstr_fd("rr\n", 1);
 }

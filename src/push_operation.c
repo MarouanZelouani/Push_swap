@@ -16,7 +16,7 @@ stack *pop(stack **s)
     return tmp;
 }
 
-void push_a(stack **a, stack **b)
+void push_a(stack **a, stack **b, int true)
 {
     stack *top;
 
@@ -24,10 +24,11 @@ void push_a(stack **a, stack **b)
     if (top == NULL)
         return ;
     push(a, top);
-    ft_putstr_fd("pa\n", 1);
+    if (true)
+        ft_putstr_fd("pa\n", 1);
 }
 
-void push_b(stack **a, stack **b)
+void push_b(stack **a, stack **b, int true)
 {
     stack *top;
 
@@ -35,7 +36,8 @@ void push_b(stack **a, stack **b)
     if (top == NULL)
         return ;
     push(b, top);
-    ft_putstr_fd("pb\n", 1);
+    if (true)
+        ft_putstr_fd("pb\n", 1);
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:34:51 by mzelouan          #+#    #+#             */
-/*   Updated: 2023/12/06 14:45:50 by mzelouan         ###   ########.fr       */
+/*   Updated: 2024/01/21 05:23:45 by mzelouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 char *get_next_line(int fd);
 void read_line_fd(char **stash, int fd);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *left_str, char *buff);
+char	*ft_strjoi(char *left_str, char *buff);
 size_t	ft_strlen(const char *s);
 char *extract_line(char *stash);
 char *clean_stash (char *stash);

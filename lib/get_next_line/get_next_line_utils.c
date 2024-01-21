@@ -6,7 +6,7 @@
 /*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:34:33 by mzelouan          #+#    #+#             */
-/*   Updated: 2024/01/20 05:18:57 by mzelouan         ###   ########.fr       */
+/*   Updated: 2024/01/21 05:24:04 by mzelouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *left_str, char *buff)
+char	*ft_strjoi(char *left_str, char *buff)
 {
 	size_t	i;
 	size_t	j;

@@ -14,9 +14,9 @@ int is_the_greater(stack *s, stack *to_test)
 void sort_three(stack **a)
 {
     if (is_the_greater(*a, *a))
-        rotate_a(a);
+        rotate_a(a, 1);
     else if (is_the_greater(*a, (*a)->next))
-        reverse_rotate_a(a);
+        reverse_rotate_a(a, 1);
     if ((*a)->data > ((*a)->next)->data)
-        swap_a(a);
+        swap_a(a, 1);
 }

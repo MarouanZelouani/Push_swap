@@ -1,4 +1,5 @@
 #include "../includes/push_swap.h"
+#include "../includes/get_next_line.h"
 
 int main (int ac, char **args)
 {
@@ -11,7 +12,7 @@ int main (int ac, char **args)
     stack_a = NULL;
     stack_b = NULL;
     i = 1;
-    str = "";
+    str = NULL;
     // check if there is no arguments or the first arg id an empty string
     if (ac < 1 && args[1][0] == '\0')
         return (0);
@@ -39,5 +40,5 @@ int main (int ac, char **args)
         ft_putstr_fd("OK\n", 1);
     else
         ft_putstr_fd("KO\n", 1);
-    return (0);
+    return (0);    
 }

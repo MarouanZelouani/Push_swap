@@ -50,7 +50,7 @@ void move_chosen_node(stack **a, stack **b)
         case_3(to_push, target, a, b);
     else 
         case_4(to_push, target, a, b);
-    push_a(a, b);
+    push_a(a, b, 1);
 }
 
 void send_min_node_to_top(stack **a)
@@ -59,7 +59,7 @@ void send_min_node_to_top(stack **a)
         {
             while (get_min_in_stack(*a)->index != 0)
             {
-                reverse_rotate_a(a);
+                reverse_rotate_a(a, 1);
                 set_index_to_node(*a);
             }
         }
@@ -67,7 +67,7 @@ void send_min_node_to_top(stack **a)
         {
             while (get_min_in_stack(*a)->index != 0)
             {
-                rotate_a(a);
+                rotate_a(a, 1);
                 set_index_to_node(*a);
             }
         }
@@ -76,7 +76,7 @@ void send_min_node_to_top(stack **a)
 void sort_stack(stack **a, stack **b)
 {
     if (ft_stack_size(*a) == 2)
-        swap_a(a);
+        swap_a(a, 1);
     else if (ft_stack_size(*a) == 3)
         sort_three(a);
     // else if (ft_stack_size(*a) <= 5)
@@ -84,7 +84,7 @@ void sort_stack(stack **a, stack **b)
     else 
     {
         while (ft_stack_size(*a) > 3)
-            push_b(a, b);
+            push_b(a, b, 1);
         sort_three(a);
         while(*b)
         {

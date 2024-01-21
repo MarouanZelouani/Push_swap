@@ -17,19 +17,22 @@ void reverse_rotate(stack **s)
     *s = last;
 }
 
-void reverse_rotate_a(stack **a)
+void reverse_rotate_a(stack **a, int true)
 {
     reverse_rotate(a);
-    ft_putstr_fd("rra\n", 1);
+    if (true)
+        ft_putstr_fd("rra\n", 1);
 }
-void reverse_rotate_b(stack **b)
+void reverse_rotate_b(stack **b, int true)
 {
     reverse_rotate(b);
-    ft_putstr_fd("rrb\n", 1);
+    if (true)
+        ft_putstr_fd("rrb\n", 1);
 }
-void reverse_rotate_ab(stack **a, stack **b)
+void reverse_rotate_ab(stack **a, stack **b, int true)
 {
     reverse_rotate(a);
     reverse_rotate(b);
-    ft_putstr_fd("rrr\n", 1);
+    if (true)
+        ft_putstr_fd("rrr\n", 1);
 }

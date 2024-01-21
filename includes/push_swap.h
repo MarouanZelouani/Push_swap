@@ -52,27 +52,27 @@ void move_chosen_node(stack **a, stack **b);
 // SORTING OPERATIONS
 // SWAP
 void swap(stack **s);
-void swap_a(stack **a);
-void swap_b(stack **b);
-void swap_ab(stack **a, stack **b);
+void swap_a(stack **a, int true);
+void swap_b(stack **b, int true);
+void swap_ab(stack **a, stack **b, int true);
 // PUSH
 void push(stack **s, stack *top);
 stack *pop(stack **s);
-void push_a(stack **a, stack **b);
-void push_b(stack **a, stack **b);
+void push_a(stack **a, stack **b, int true);
+void push_b(stack **a, stack **b, int true);
 // ROTATE
 void rotate(stack **s);
-void rotate_a(stack **a);
-void rotate_b(stack **b);
-void rotate_ab(stack **a, stack **b);
+void rotate_a(stack **a, int true);
+void rotate_b(stack **b, int true);
+void rotate_ab(stack **a, stack **b, int true);
 // REVERSE ROTATE
 void reverse_rotate(stack **s);
-void reverse_rotate_a(stack **a);
-void reverse_rotate_b(stack **b);
-void reverse_rotate_ab(stack **a, stack **b);
+void reverse_rotate_a(stack **a, int true);
+void reverse_rotate_b(stack **b, int true);
+void reverse_rotate_ab(stack **a, stack **b, int true);
 
 // CHECKER 
-void execute_operation(stack **a, stack **b, char *operation);
+//void execute_operation(stack **a, stack **b, char *operation);
 void execute_instructions(stack **a, stack **b);
 
 #endif

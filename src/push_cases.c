@@ -7,7 +7,7 @@ void case_4 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0 && target->index != 0)
     {
-        rotate_ab(a, b);
+        rotate_ab(a, b, 1);
         set_index_to_node(*a);
         set_index_to_node(*b);
     }
@@ -15,7 +15,7 @@ void case_4 (stack *to_push, stack *target, stack **a, stack **b)
     {
         while (target->index != 0)
         {
-            rotate_a(a);
+            rotate_a(a, 1);
             set_index_to_node(*a);
         }
     }
@@ -23,7 +23,7 @@ void case_4 (stack *to_push, stack *target, stack **a, stack **b)
     {
         while (to_push->index != 0)
         {
-            rotate_b(b);
+            rotate_b(b, 1);
             set_index_to_node(*b);
         }
     }
@@ -34,12 +34,12 @@ void case_3 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0)
     {
-        rotate_b(b);
+        rotate_b(b, 1);
         set_index_to_node(*b);
     }
     while (target->index != 0)
     {
-        reverse_rotate_a(a);
+        reverse_rotate_a(a, 1);
         set_index_to_node(*a);
     }
 }
@@ -49,12 +49,12 @@ void case_2 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0)
     {
-        reverse_rotate_b(b);
+        reverse_rotate_b(b, 1);
         set_index_to_node(*b);
     }
     while (target->index != 0)
     {
-        rotate_a(a);
+        rotate_a(a, 1);
         set_index_to_node(*a);
     }
 }
@@ -64,7 +64,7 @@ void case_1 (stack *to_push, stack *target, stack **a, stack **b)
 {
     while (to_push->index != 0 && target->index != 0)
     {
-        reverse_rotate_ab(a, b);
+        reverse_rotate_ab(a, b, 1);
         set_index_to_node(*a);
         set_index_to_node(*b);
     }
@@ -72,7 +72,7 @@ void case_1 (stack *to_push, stack *target, stack **a, stack **b)
     {
         while (target->index != 0)
         {
-            reverse_rotate_a(a);
+            reverse_rotate_a(a, 1);
             set_index_to_node(*a);
         }
     }
@@ -80,7 +80,7 @@ void case_1 (stack *to_push, stack *target, stack **a, stack **b)
     {
         while (to_push->index != 0)
         {
-            reverse_rotate_b(b);
+            reverse_rotate_b(b, 1);
             set_index_to_node(*b);
         }
     }
