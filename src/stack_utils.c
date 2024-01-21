@@ -57,7 +57,9 @@ void init_stack(stack **stack_a, char ** av)
         if (!(cheker >= INT_MIN && cheker <= INT_MAX))
         {
             ft_putstr_fd("Error\n", 2);
-            return ;
+            free_vector(av);
+            free_stack(*stack_a);
+            exit(1);
         }
         holder = ft_new_stack_node(cheker, index);
         ft_stack_add_back(stack_a, holder);

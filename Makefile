@@ -48,6 +48,7 @@ re: fclean all
 clean : 
 	@$(RM) $(OFILES) $(PUSH_SWAP_O) $(CHECKER_O)
 	@cd $(LIBFTFOLDER) && make clean
+	@$(RM) $(LIBFT)
 
 	 
 fclean : clean

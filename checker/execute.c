@@ -1,6 +1,14 @@
 #include "../includes/push_swap.h"
 #include "../includes/get_next_line.h"
 
+static void free_and_exit(stack **a, stack **b, char *operation)
+{
+    free(operation);
+    free_stack(*a);
+    free_stack(*b);
+    exit(1);
+}
+
 static int	ft_strcmp(char *s1, char *s2)
 {
 	unsigned int	i;
@@ -38,11 +46,8 @@ static void execute_operation(stack **a, stack **b, char *operation)
         reverse_rotate_b(b, 0);
     else if (ft_strcmp(operation, "rrr\n") == 0)
         reverse_rotate_ab(a, b, 0);
-    else {
-        ft_putstr_fd("Error\n", 2);
-        // FREE
-        exit(1);
-    }
+    else 
+        free_and_exit(a, b, operation);
 }
 
 void execute_instructions(stack **a, stack **b)
@@ -54,4 +59,5 @@ void execute_instructions(stack **a, stack **b)
         free(op);
         op = get_next_line(0);
     }
+    free(op);
 }

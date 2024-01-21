@@ -75,4 +75,8 @@ void reverse_rotate_ab(stack **a, stack **b, int true);
 //void execute_operation(stack **a, stack **b, char *operation);
 void execute_instructions(stack **a, stack **b);
 
+// FREE
+void free_vector(char **av);
+void free_stack (stack *head);
+
 #endif

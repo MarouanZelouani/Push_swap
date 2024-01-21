@@ -24,15 +24,17 @@ int main (int ac, char **args)
     }
     // spliting the args
     av = ft_split(str, ' ');
+    free(str);
     // check if there is an error
     if(!is_all_digits(av) || !exist_duplicates(av))
     {
         ft_putstr_fd("Error\n", 2);
+        free_vector(av);
         return (0);
     }
     // fetch the argument and create your stack
     init_stack(&stack_a, av);
-
+    free_vector(av);
     // execute the instructions
     execute_instructions(&stack_a, &stack_b);
 
@@ -40,5 +42,6 @@ int main (int ac, char **args)
         ft_putstr_fd("OK\n", 1);
     else
         ft_putstr_fd("KO\n", 1);
+    free_stack (stack_a);
     return (0);    
 }
