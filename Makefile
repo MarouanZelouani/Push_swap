@@ -1,17 +1,17 @@
 NAME = push_swap
-CHECKER = check
+CHECKER = checker
 
 HFILE = ./includes/push_swap.h
 GNL_HFILE = ./includes/get_next_line.h
 LIBFT_HFILE = ./includes/libft.h
 
 LIBFT = libft.a
-LIBFTFOLDER = ./libft
+LIBFTFOLDER = ./lib/libft
 SRC = ./src
 
-CFILES = ./lib/get_next_line/get_next_line.c  ./lib/get_next_line/get_next_line_utils.c	checker/execute.c src/error_checks.c src/free_stack.c src/push_cases.c src/push_operation.c  src/reverse_r_operation.c src/rotate_operation.c src/sort.c src/sort_for_five.c src/sort_for_three.c src/stack_utils_2.c src/stack_utils.c src/swap_operation.c
+CFILES = ./lib/get_next_line/get_next_line.c  ./lib/get_next_line/get_next_line_utils.c	checkers/execute.c src/error_checks.c src/free_stack.c src/push_cases.c src/push_operation.c  src/reverse_r_operation.c src/rotate_operation.c src/sort.c src/sort_for_three.c src/stack_utils_2.c src/stack_utils.c src/swap_operation.c
 
-CHECKER_C =		checker/check_pro.c
+CHECKER_C =		checkers/check_pro.c
 
 PUSH_SWAP_C =	src/push_swap.c
 

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_pro.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 08:56:54 by mzelouan          #+#    #+#             */
-/*   Updated: 2024/01/26 08:56:56 by mzelouan         ###   ########.fr       */
+/*   Created: 2024/01/26 08:57:00 by mzelouan          #+#    #+#             */
+/*   Updated: 2024/01/26 08:57:01 by mzelouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/get_next_line.h"
 
-char **push_swap (int ac, char **args)
+int main (int ac, char **args)
 {
     int i;
-    char *str;
     char **av;
+    char *str;
+    stack *stack_a;
+    stack *stack_b;
 
     i = 1;
     str = NULL;
-    av = NULL;
+    stack_a = NULL;
+    stack_b = NULL;
+    if (ac < 1 && args[1][0] == '\0')
+        return (0);
     while (i < ac)
     {
         str = ft_strjoin(str, " ");
@@ -29,32 +35,18 @@ char **push_swap (int ac, char **args)
     }
     av = ft_split(str, ' ');
     free(str);
-    //printf("%s\n", av[0]);
     if(!is_all_digits(av) || !exist_duplicates(av))
     {
         ft_putstr_fd("Error\n", 2);
         free_vector(av);
-        exit(1);
+        return (0);
     }
-    return av;
-}
-
-int main (int ac, char **args)
-{
-    char **av;
-    stack *stack_a;
-    stack *stack_b;
-
-    stack_a = NULL;
-    stack_b = NULL;
-    if (ac < 2 || !args[0])
-        return (-1);
-    av = push_swap(ac, args);
     init_stack(&stack_a, av);
     free_vector(av);
-    if(is_sorted(stack_a))
-        return (0);
-    sort_stack(&stack_a, &stack_b);
-    free_stack (stack_a);
-    return (0);
+    execute_instructions(&stack_a, &stack_b);
+    if(is_sorted(stack_a) && stack_b == NULL)
+        ft_putstr_fd("OK\n", 1);
+    else
+        ft_putstr_fd("KO\n", 1);
+    free_stack (stack_a);   
 }

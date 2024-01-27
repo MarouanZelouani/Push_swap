@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 08:58:28 by mzelouan          #+#    #+#             */
+/*   Updated: 2024/01/26 08:58:29 by mzelouan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 stack *ft_new_stack_node(int data, int index)
@@ -67,17 +79,6 @@ void init_stack(stack **stack_a, char ** av)
         index++;
     }
 }
-// DELETE THIS WHEN FINISHED
-void print_stack(stack *s)
-{
-    stack *current;
 
-    current = s;
-    while (current != NULL)
-    {
-        printf("DATA=%d INDEX=%d TO_PUSH=%d TARGET=%d\n", current->data, current->index, current->to_push, current->target);
-        current = current->next;
-    }
-}
 
 

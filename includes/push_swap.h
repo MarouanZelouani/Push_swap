@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 08:57:31 by mzelouan          #+#    #+#             */
+/*   Updated: 2024/01/26 08:57:33 by mzelouan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
@@ -6,7 +18,7 @@
 #include <unistd.h>
 #include <limits.h>
 
-#include "../libft/libft.h"
+#include "../lib/libft/libft.h"
 
 typedef struct t_stack
 {
@@ -22,7 +34,6 @@ void init_stack(stack **stack_a, char **av);
 int is_all_digits(char **av);
 int exist_duplicates (char **av);
 int is_sorted(stack *s);
-void print_stack(stack *s);
 int ft_stack_size(stack *s);
 stack * get_min_in_stack(stack *s);
 

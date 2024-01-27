@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils_2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 08:58:24 by mzelouan          #+#    #+#             */
+/*   Updated: 2024/01/26 08:58:25 by mzelouan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 stack * get_min_in_stack(stack *s)
@@ -83,17 +95,9 @@ void set_node_to_push(stack *a, stack *b)
     chosen_node = NULL;
     while (b != NULL)
     {
-        // NEED TOBE FIXED
-        // if (calculate_price(b, get_node(a, b->target)) < calculate_price(b->next, get_node(a, (b->next)->target)))
-        //     chosen_node = b;
-
-        // FIXED
         if (chosen_node == NULL || 
         calculate_price(a, head, b, get_node(a, b->target)) < calculate_price(a, head, chosen_node, get_node(a, chosen_node->target)))
             chosen_node = b;
-        // if (chosen_node == NULL || 
-        // calculate_price(b, get_node(a, b->target)) < calculate_price(chosen_node, get_node(a, chosen_node->target)))
-        //     chosen_node = b;
         b = b->next;
     }
     if (chosen_node != NULL)
@@ -112,5 +116,3 @@ void set_index_to_node(stack *s)
         s = s->next;
     }
 }
-
-// MOVE FUNCTION

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_checks.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/26 08:57:50 by mzelouan          #+#    #+#             */
+/*   Updated: 2024/01/26 08:57:51 by mzelouan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int is_all_digits(char **av)
@@ -10,7 +22,12 @@ int is_all_digits(char **av)
     {
         j = 0;
         if (av[i][0] == '-')
-            j++;
+        {
+            if (!av[i][1])
+                return(0);
+            else 
+                j++;
+        }
         while(av[i][j])
         {
             if (!ft_isdigit(av[i][j]))
@@ -32,7 +49,6 @@ int exist_duplicates (char **av)
         j = i + 1;
         while (av[j])
         {
-            //printf("av[i]=%s AND av[j]=%s\n", av[i], av[j]);
             if (ft_strlen(av[i]) == ft_strlen(av[j]))
                 if (ft_strncmp(av[i], av[j], ft_strlen(av[i])) == 0)
                     return (0);
