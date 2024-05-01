@@ -6,20 +6,20 @@
 /*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:34:33 by mzelouan          #+#    #+#             */
-/*   Updated: 2024/01/21 05:24:04 by mzelouan         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:08:41 by mzelouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_get(const char *s, int c)
 {
 	unsigned char	ch;
 
 	ch = (unsigned char)c;
-    if (s == NULL)
+	if (s == NULL)
 	{
-        return (NULL);
+		return (NULL);
 	}
 	while (*s)
 	{
@@ -32,7 +32,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoi(char *left_str, char *buff)
+char	*ft_strjoin_get(char *left_str, char *buff)
 {
 	size_t	i;
 	size_t	j;
@@ -45,7 +45,8 @@ char	*ft_strjoi(char *left_str, char *buff)
 	}
 	if (!left_str || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(left_str) + ft_strlen(buff)) + 1));
+	str = malloc(sizeof(char) * ((ft_strlen_get(left_str) \
+	+ ft_strlen_get(buff)) + 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
@@ -55,19 +56,19 @@ char	*ft_strjoi(char *left_str, char *buff)
 			str[i] = left_str[i];
 	while (buff[j] != '\0')
 		str[i++] = buff[j++];
-	str[ft_strlen(left_str) + ft_strlen(buff)] = '\0';
+	str[ft_strlen_get(left_str) + ft_strlen_get(buff)] = '\0';
 	free(left_str);
 	return (str);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_get(const char *s)
 {
 	size_t	len;
 
 	len = 0;
-    if (s == NULL)
+	if (s == NULL)
 	{
-        return (0);
+		return (0);
 	}
 	while (s[len] != '\0')
 		len++;

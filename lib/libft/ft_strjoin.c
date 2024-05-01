@@ -6,7 +6,7 @@
 /*   By: mzelouan <mzelouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 12:03:02 by mzelouan          #+#    #+#             */
-/*   Updated: 2024/01/20 05:36:53 by mzelouan         ###   ########.fr       */
+/*   Updated: 2024/02/03 01:44:11 by mzelouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ char	*ft_strjoin(char *s1, char *s2)
 	ft_strlcpy(new, s1, len);
 	ft_strlcat(new, s2, len);
 	free(s1);
-	// free(s2);
 	return (new);
 }
